@@ -1,6 +1,6 @@
 ﻿$TaskActionSplat = @{
     Execute = 'PowerShell.exe'
-    Argument = '-file C:\scripts\GitCronSync.ps1 -WindowStyle Hidden'
+    Argument = '-file C:\GitSync\gitPush.ps1 -WindowStyle Hidden'
 }
 $TaskAction = New-ScheduledTaskAction @TaskActionSplat
 
@@ -24,7 +24,7 @@ $RegisterTaskSplat = @{
     Settings = $TaskSettings
     TaskName = 'GitCronSync'
     Description = 'Commits files from C:\GitCronSync to GitHub repo'
-    User = 'GitCronSync'
-    Password = 'P@ssw0rd'
+    User = 'svc.GitSync'
+    Password = 'Pa$$w0rd'
 }
 Register-ScheduledTask @RegisterTaskSplat
